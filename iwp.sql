@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`adminid`, `password`, `empid`) VALUES
-('sachin', '1234', 'sachin');
+('admin', '1111', 'admin');
 
 -- --------------------------------------------------------
 
@@ -65,10 +65,10 @@ INSERT INTO `balance` (`balance`) VALUES
 --
 
 CREATE TABLE `booked_hist` (
-  `phone` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `idproof` varchar(20) NOT NULL,
-  `room_type` varchar(20) NOT NULL,
+  `phone` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `idproof` varchar(255) NOT NULL,
+  `room_type` varchar(65) NOT NULL,
   `checkin` date NOT NULL,
   `checkout` date NOT NULL,
   `days` int(11) NOT NULL,
@@ -90,7 +90,7 @@ INSERT INTO `booked_hist` (`phone`, `name`, `idproof`, `room_type`, `checkin`, `
 (123, 'abc', '123', 'Single bed', '2019-10-09', '2019-10-17', 8, 'false', 'false', 'false', 'false', 'false', 'false', 1000, 10013),
 (123, 'abc', '123', 'Single bed', '2019-10-09', '2019-10-12', 3, 'false', 'true', 'true', 'false', 'false', 'false', 2350, 10014),
 (123, 'abc', '123', 'Single bed', '2019-10-17', '2019-10-19', 2, 'false', 'false', 'false', 'false', 'false', 'false', 1000, 10016),
-(1234, 'Vaibhav', '1234', 'Single bed', '2019-11-08', '2019-11-10', 2, 'false', 'true', 'true', 'false', 'false', 'false', 2900, 10019);
+(1234, 'Test', '1234', 'Single bed', '2019-11-08', '2019-11-10', 2, 'false', 'true', 'true', 'false', 'false', 'false', 2900, 10019);
 
 -- --------------------------------------------------------
 
@@ -116,10 +116,10 @@ INSERT INTO `book_id` (`book_id`) VALUES
 --
 
 CREATE TABLE `confirmed_booking` (
-  `phone` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `idproof` varchar(20) NOT NULL,
-  `room_type` varchar(20) NOT NULL,
+  `phone` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `idproof` varchar(255) NOT NULL,
+  `room_type` varchar(255) NOT NULL,
   `checkin` date NOT NULL,
   `checkout` date NOT NULL,
   `days` int(11) NOT NULL,
@@ -223,10 +223,10 @@ INSERT INTO `temp_session` (`phone`, `password`, `name`, `email`, `idproof`, `do
 --
 
 CREATE TABLE `user_login` (
-  `phone` int(11) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `phone` bigint(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `idproof` varchar(20) NOT NULL,
   `dob` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
